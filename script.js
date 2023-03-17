@@ -37,7 +37,6 @@ const livesPic = '<img src="./images/hpface.gif" alt="Harry Potter face" id="hpl
 const lives_container = document.getElementById('hpLivesFaces');
 let selectSound = new Audio('./sounds/select.mp3');
 let twinkleSound = new Audio('./sounds/twinkle.mp3');
-// Sound Effect by <a href="https://pixabay.com/users/shidenbeatsmusic-25676252/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=115095">ShidenBeatsMusic</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=115095">Pixabay</a>
 let winSound = new Audio('./sounds/win.mp3');
 let loseSound = new Audio('./sounds/lose.mp3');
 
@@ -46,7 +45,7 @@ function pickRandomWord() {
     solution = harry_potter_char[Math.floor(Math.random() * harry_potter_char.length)]
 }
 
-// Function to create buttons for each letter that player can choose from. String of alphabet. Split the array. Then map each letter to make a function for each individual letter to create a button for each one. When a button is clicked, it will run function rightOrWrong().
+// Function to create buttons for each letter that player can choose from.
 function createLetterButtons() {
     let buttonsGame = "ABCDEFGHIJKLMNOPQRSTUVWXYZ ".split('')
     .map(
@@ -66,7 +65,6 @@ function createLetterButtons() {
 
 // Run these functions after player chooses a letter. Handles the player's choice if correct or incorrect.
 function rightOrWrong(playerLetter) {
-    // If indexOf is >= 0, then letter chosen is part of the answer, if -1 then the letter chosen is not part of the answer. 
     
     // If wrong letter chosen, letter button becomes disabled.
     playerGuessed.indexOf(playerLetter) === -1 ? playerGuessed.push(playerLetter) : null;
@@ -84,21 +82,20 @@ function rightOrWrong(playerLetter) {
     }
 }
 
-// Shows underscores in place of letters to be guessed, if not already guessed, using split() and map() methods. 
+// Shows underscores in place of letters to be guessed, if not already guessed. 
 function guessThisWord() {
     wordState = solution.split('').map(letter => (playerGuessed.indexOf(letter) >= 0 ? letter : " _ ")).join('');
 
     document.getElementById('wordGoesHere').innerHTML = wordState;
 }
 
-// Sets maximum number of incorrect guesses to 6 in upper right corner.
+// Sets maximum number of incorrect guesses to 6 in upper left corner.
 document.getElementById('maxIncorrect').innerHTML = maxIncorrect;
 
 
-//Updates the number of incorrect guesses in upper right corner.
+//Updates the number of incorrect guesses in upper left corner.
 function updateNumberIncorrect() {
     document.getElementById('numberIncorrect').innerHTML = numberIncorrect;
-
 }
 
 // When player loses, shows the solution where letter lines are, and YOU LOSE string where letter buttons are.
@@ -157,3 +154,7 @@ pickRandomWord();
 createLetterButtons();
 guessThisWord();
 draw_lives();
+
+
+
+// Sound Effect by <a href="https://pixabay.com/users/shidenbeatsmusic-25676252/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=115095">ShidenBeatsMusic</a> from <a href="https://pixabay.com/sound-effects//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=115095">Pixabay</a>
