@@ -1,0 +1,78 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('images/hpbackground.png');
+    background-size: cover;
+  }
+
+.text-title {
+    text-align: center;
+    font-size: 48px;
+    color: rgb(247, 178, 16);
+}
+
+.wrong-guesses {
+    text-align: left;
+    font-weight: bolder;
+    color: rgb(247, 178, 16);
+    margin-bottom: 15px;
+}
+
+#hplife {
+    height: 70px;
+    width: 70px;
+}
+
+.pic-area {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#gamePic {
+    height: 400px;
+    width: 400px;
+    opacity: 75%;
+}
+
+#category-title {
+    font-size: 20px;
+    font-weight: bolder;
+    /* color:rgb(251, 123, 3); */
+    color: rgb(247, 178, 16);
+    margin-top: 15px;
+}
+
+#wordGoesHere { 
+    text-align: center;
+    color: orangered;
+    padding: 20px;
+    display: flex;
+    align-content:space-evenly;
+    border-style: solid;
+    border-radius: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    box-shadow: -1px -1px 39px -7px rgba(0,0,0,0.75);
+    background-color: aliceblue;
+    opacity: 75%;
+}
+
+#letterButtons {
+    margin: 4px;
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(247, 178, 16);
+}
+
+.letterBtns {
+    box-shadow: 10px 10px 5px -4px rgba(0,0,0,0.75);
+}
+
+.reset-button {
+    margin: 10px;
+    box-shadow: 0px 0px 37px -4px rgba(0,0,0,0.75);
+}
